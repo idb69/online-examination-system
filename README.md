@@ -1,81 +1,29 @@
-# 🎓 Online Examination System
+# Cloud-Based Online Examination System
 
-A cloud-based Online Examination System developed using **Java Spring Boot, PostgreSQL, Hibernate/JPA, HTML, CSS, and JavaScript**.
+## Features
+- Role-based authentication: ADMIN and STUDENT
+- Timed examination (30 minutes) with automatic submission
+- Question bank CRUD for administrators
+- Automatic scoring, percentage and PASS/FAIL result generation
+- Result history for administrators
+- Cloud-ready configuration using environment variables
+- Docker support for deployment
 
-The system allows students to participate in online examinations, answer multiple-choice questions, and receive their results. Administrators can manage the question bank through the Admin Panel.
+## Demo accounts
+- Admin: `admin@onlineexam.com` / `admin123`
+- Student: `student@onlineexam.com` / `student123`
 
-## 🚀 Live Demo
+## Database
+Create MySQL database `online_exam_db`, then configure:
+- `DB_URL`
+- `DB_USERNAME`
+- `DB_PASSWORD`
 
-🌐 **Live Application:**  
-https://online-examination-system-v0we.onrender.com
+## Run
+```bash
+./mvnw spring-boot:run
+```
+Open `http://localhost:8080/login`.
 
-> Note: The application is deployed on Render. The free instance may take some time to start after inactivity.
-
----
-
-## ✨ Features
-
-### 👨‍🎓 Student Features
-
-- Enter student name
-- Start online examination
-- Attempt multiple-choice questions
-- Submit answers
-- Get instant results
-- View examination score
-
-### 👨‍💼 Admin Features
-
-- Admin Panel
-- Add new questions
-- Manage question bank
-- Set multiple options
-- Select correct answers
-
-### ☁️ Cloud Features
-
-- Cloud-hosted Spring Boot application
-- PostgreSQL cloud database
-- Environment variables for database security
-- Deployed using Render
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| Java | Backend Development |
-| Spring Boot | Application Framework |
-| Spring Data JPA | Database Operations |
-| Hibernate | ORM |
-| PostgreSQL | Database |
-| HTML | Frontend Structure |
-| CSS | User Interface Design |
-| JavaScript | Frontend Functionality |
-| Maven | Dependency Management |
-| Render | Cloud Deployment |
-
----
-
-## 📂 Project Structure
-
-```text
-online-examination-system
-│
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.onlineexam.system
-│   │   │       ├── controller
-│   │   │       ├── model
-│   │   │       ├── repository
-│   │   │       └── service
-│   │   │
-│   │   └── resources
-│   │       ├── static
-│   │       ├── templates
-│   │       └── application.properties
-│
-├── pom.xml
-└── README.md
+## Cloud deployment
+Deploy the Docker image or Spring Boot application to Render, Railway, AWS Elastic Beanstalk, EC2, or another cloud platform. Set `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, and optionally `PORT` as environment variables.
